@@ -1,0 +1,30 @@
+body {
+    background: whitesmoke;
+}
+
+div#MemoryBoard {
+    background: rgb(143, 143, 143);
+    border: rgb(109, 109, 109) 2px solid;
+    width: 800px;
+    height: 540px;
+    padding: 24px;
+    margin: 0px auto;
+    box-shadow: 1px 1px 1px;
+}
+
+div#MemoryBoard > div {
+    background-image: url(Img/CardBack.jpg.png);
+    background-repeat: no-repeat;
+    border: rgb(100, 100, 100) 1px solid;
+    width: 71px;
+    height: 71px;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    font-size: 64px;
+    text-align: center;
+}
+
+div#MemoryBoard > div:hover {
+    cursor: pointer;
+}
