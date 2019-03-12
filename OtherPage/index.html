@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shooting Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script defer src="https://unpkg.com/vue"></script>
+    <script src="app.js"></script>
+</head>
+
+
+<body>
+    <!-- <div id="shootingGame">
+        <canvas ref="canvas" id="shootingGrounds" width="1330px" height="625px"></canvas>
+    </div> -->
+    <div id="app">
+        <h1>canvas Demo</h1>
+        <canvas ref="canvas" id="drawing-pad" width="300" height="300">
+            This is an interactive drawing pad.
+        </canvas>
+        <div>
+            <button @click='resetCanvas'>Reset Canvas</button>
+            <button @click='saveImage'>Save Image</button>
+            <button @click='replay'>Replay</button>
+        </div>
+        <hr>
+        <img ref="img" src="" id='canvas-image'>
+        <small>Right click to save image</small>
+    </div>
+</body>
+
+
+</html>
