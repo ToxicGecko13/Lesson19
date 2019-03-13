@@ -1,3 +1,5 @@
+// Vue converted code
+
 Array.prototype.shuffleCards = function() {
     let i = this.length, j, temp;
     while(--i > 0) {
@@ -6,7 +8,7 @@ Array.prototype.shuffleCards = function() {
         this[j] = this[i];
         this[i] = temp;
     };
-}
+};
 
 var vm = new Vue({ 
     el: '#MemoryBoard',
@@ -25,6 +27,12 @@ var vm = new Vue({
         InitializeBoardState: function() {
             this.newBoard();
             this.cards.shuffleCards();
+
+            document.querySelectorAll('.cards').forEach((element) => {
+                if (element.innerText === "") {
+                    element.addEventListener('click', this.flipCard);
+                };
+            });
         },
 
         newBoard: function() {
@@ -33,27 +41,21 @@ var vm = new Vue({
             document.getElementById('MemoryBoard').innerHTML = output;
         },
 
-        flipCard: function(card,val) {
-            if(card.innerHTML == "" && cardValue.length < 2) {
-                card.style.background = 'lightblue';
-                card.innerHTML = val;
+        flipCard: function(cards, val) {
+            if(cards.innerHTML == "" && cardValue.length < 2) {
+                cards.style.background = 'lightblue';
+                cards.innerHTML = val;
                 if(cardValue.length == 0) {
                     cardValue.this.push(val);
-                    cardId.this.push(card.id);
+                    cardId.this.push(cards.id);
                 } else if(cardValue.length == 1) {
                     cardValue.this.push(val);
-                    cardId.this.push(card.id);
+                    cardId.this.push(cards.id);
                     if(cardValue[0] == cardValue[1]) {
                         cardsFlipped += 2;
                         // Clear both arrays
                         cardValue = [];
                         cardId = [];
-                        // Check to see if the whole board is cleared
-                        // if(cardsFlipped == cards.length) {
-                        //     alert("Board cleared... generating new board");
-                        //     document.getElementById('MemoryBoard').innerHTML = "";
-                        //     this.newBoard();
-                        // }
                     } else {
                         function flip2Back() {
                             // Flip the 2 cards back over 
@@ -71,6 +73,8 @@ var vm = new Vue({
                     }
                 }
             }
-        },
+        }
+        // End of flipCard
     }
+    // End of Vue methods
 }),

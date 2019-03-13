@@ -98,6 +98,11 @@ var vm = new Vue({
             }
             alert(`Game End : Winner ${this.gameState.Winner}`);
         },
+
+        
+
+
+
         MainGameLogic: function(event) {
             // Event based game loop, called when the user click/chooses a game board square.
             // event.target.id[0] returns a string, so we need to convert it to a number.
@@ -132,6 +137,11 @@ var vm = new Vue({
                 this.WinnerScreen();
             }
         },
+
+
+
+
+
         TestForWin: function(TestBoard) {
             // Break out the test for a specific player win.
             // Return 'X' or 'O' of the winner, 'Tie' for a full board, '' for no current winner.

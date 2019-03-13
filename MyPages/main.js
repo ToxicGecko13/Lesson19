@@ -1,3 +1,6 @@
+// Lesson 16 homework
+// Code to be converted to Vue
+
 let cards = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
 let cardValue = [];
 let cardId = [];
